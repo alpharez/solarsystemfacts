@@ -1,0 +1,13 @@
+{% if facts %}
+		<ul>
+		{% for fact in facts %}
+				<li>{{ fact.name }}</li>
+				<li>{{ fact.description }}</li>
+				<li>{{ fact.body }} </li>
+				{% load static %}
+				<li><img src="{% static fact.image %}"></li>
+		{% endfor %}
+		</ul>
+{% else %}
+		<p>No facts available</p>
+{% endif %}
